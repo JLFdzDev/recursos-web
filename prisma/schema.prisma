@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model Resource {
+    id          String  @id @default(uuid())
+    name        String  @unique
+    url         String  @unique
+    poster      String?
+    description String? @db.Text
+    tags        Tag[]
+
+    @@map("recursos-web_resource")
+}
+
+model Tag {
+    id        String     @id @default(uuid())
+    name      String     @unique
+    resources Resource[]
+
+    @@map("recursos-web_tags")
+}
