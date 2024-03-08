@@ -1,10 +1,17 @@
-export default function Home () {
+import { Header } from '@/components/header'
+import { ResourcesList } from '@/components/resources-list'
+
+interface HomeProps {
+	searchParams: {
+		tag?: string
+	}
+}
+
+export default function Home ({ searchParams }: HomeProps) {
 	return (
-		<main>
-			<h1 className="text-5xl text-primary">Pruebas</h1>
-			<h1 className="text-5xl text-secondary">Pruebas</h1>
-			<h1 className="text-5xl text-light">Pruebas</h1>
-			<h1 className="text-5xl text-darken">Pruebas</h1>
+		<main className="w-full max-w-screen-xl mx-auto py-10">
+			<Header currentFilter={searchParams.tag} />
+			<ResourcesList tagFilter={searchParams.tag} />
 		</main>
 	)
 }
