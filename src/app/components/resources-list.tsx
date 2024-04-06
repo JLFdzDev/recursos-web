@@ -8,7 +8,12 @@ interface ResourcesListProps {
 }
 
 export const ResourcesList = async ({ tagFilter }: ResourcesListProps) => {
-	const dataUrl = `${process.env.API_URL}/resources`
+	let dataUrl = `${process.env.API_URL}/resources`
+
+	if (tagFilter) {
+		dataUrl += `?tag=${tagFilter}`
+	}
+
 	const resources = await getData<Resource[]>(dataUrl)
 
 	return (
