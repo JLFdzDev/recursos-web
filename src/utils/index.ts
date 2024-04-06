@@ -1,5 +1,5 @@
 export async function getData<T>(url: string, options?: RequestInit): Promise<T> {
-	const res = await fetch(url)
+	const res = await fetch(url, options)
 
 	if (!res.ok) {
 		throw new Error('Failed to fetch data')
