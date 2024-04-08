@@ -6,3 +6,8 @@ export interface Resource extends ResourceBase {
 }
 
 export interface Tag extends TagBase {}
+
+export interface SelectOption {
+	value: string
+	label: string
+}
