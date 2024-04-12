@@ -1,5 +1,4 @@
-import { Resource } from '@/types'
-
+import { Actions } from '@/app/dashboard/resources/components/actions'
 import { Table } from '@/components/table'
 import { Tbody } from '@/components/table-body'
 import { Td } from '@/components/table-body-col'
@@ -8,13 +7,11 @@ import { Th } from '@/components/table-head-col'
 import { Tr } from '@/components/table-row'
 import { Tag } from '@/components/tag'
 
-import { getData } from '@/utils'
-import { Actions } from './actions'
-
 import noImage from '@/app/images/no-image.webp'
+import { findAll } from '@/db/repository/resources'
 
 export const List = async () => {
-	const resources = await getData<Resource[]>(`${process.env.API_URL}/resources`)
+	const resources = await findAll()
 
 	return (
 		<Table>

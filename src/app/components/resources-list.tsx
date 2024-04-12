@@ -1,7 +1,5 @@
-import { Resource } from '@/types'
-
 import { Card } from '@/components/card'
-import { getData } from '@/utils'
+import { findAll, findByTag } from '@/db/repository/resources'
 
 interface ResourcesListProps {
 	tagFilter?: string
@@ -14,7 +12,7 @@ export const ResourcesList = async ({ tagFilter }: ResourcesListProps) => {
 		dataUrl += `?tag=${tagFilter}`
 	}
 
-	const resources = await getData<Resource[]>(dataUrl)
+	const resources = tagFilter != null ? await findByTag(tagFilter) : await findAll()
 
 	return (
 		<section className="grid grid-cols-4 gap-4 items-stretch">

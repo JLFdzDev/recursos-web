@@ -1,8 +1,8 @@
 'use server'
 
-import { prisma } from '@/db/connection'
 import { ResourceInputs } from '@/types'
-import { connect } from 'http2'
+
+import { prisma } from '@/db/connection'
 
 export async function findAll() {
 	const data = await prisma.resource.findMany({

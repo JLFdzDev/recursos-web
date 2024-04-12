@@ -1,11 +1,9 @@
-import { Tag } from '@/types'
-
 import { ResourceForm } from '@/app/dashboard/resources/components/form'
 
-import { getData } from '@/utils'
+import { findAll } from '@/db/repository/tags'
 
 export default async function DashboardResourcesAddPage() {
-	const tags = await getData<Tag[]>(`${process.env.API_URL}/tags`, { cache: 'no-store' })
+	const tags = await findAll()
 	const selectOptions = tags.map((tag) => ({
 		value: tag.id,
 		label: tag.name,

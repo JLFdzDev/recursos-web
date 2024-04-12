@@ -1,9 +1,7 @@
-import { Tag as TagT } from '@/types'
-
 import { Tag } from '@/components/tag'
 import Link from 'next/link'
 
-import { getData } from '@/utils'
+import { findAll } from '@/db/repository/tags'
 import clsx from 'clsx'
 
 interface HeaderProps {
@@ -11,7 +9,7 @@ interface HeaderProps {
 }
 
 export const Header = async ({ currentFilter }: HeaderProps) => {
-	const tags = await getData<TagT[]>(`${process.env.API_URL}/tags`, { cache: 'no-store' })
+	const tags = await findAll()
 
 	return (
 		<header className="mb-10">
