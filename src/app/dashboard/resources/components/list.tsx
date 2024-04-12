@@ -10,6 +10,8 @@ import { Tag } from '@/components/tag'
 
 import { getData } from '@/utils'
 
+import noImage from '@/app/images/no-image.webp'
+
 export const List = async () => {
 	const resources = await getData<Resource[]>(`${process.env.API_URL}/resources`)
 
@@ -27,7 +29,7 @@ export const List = async () => {
 					<Tr key={resource.id}>
 						<Td>
 							<img
-								src={resource.poster ? resource.poster : '#'}
+								src={resource.poster ? resource.poster : noImage.src}
 								alt={`Poster del recurso ${resource.name}`}
 								className="aspect-square w-full h-16 object-cover object-center"
 							/>
