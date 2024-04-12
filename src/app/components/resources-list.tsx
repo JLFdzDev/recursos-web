@@ -1,4 +1,5 @@
 import { Card } from '@/components/card'
+
 import { findAll, findByTag } from '@/db/repository/resources'
 
 interface ResourcesListProps {
