@@ -9,6 +9,7 @@ import { Tr } from '@/components/table-row'
 import { Tag } from '@/components/tag'
 
 import { getData } from '@/utils'
+import { Actions } from './actions'
 
 import noImage from '@/app/images/no-image.webp'
 
@@ -50,12 +51,7 @@ export const List = async () => {
 							</div>
 						</Td>
 						<Td>
-							<a
-								href={`/dashboard/resources/${resource.id}`}
-								className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-							>
-								Edit
-							</a>
+							<Actions url={`/dashboard/resources`} id={resource.id} />
 						</Td>
 					</Tr>
 				))}

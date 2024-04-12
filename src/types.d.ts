@@ -31,9 +31,9 @@ export interface SelectOption {
 export interface ResourceInputs {
 	name: string
 	url: string
-	poster: string
-	tags: SelectOption[]
-	description: string
+	poster?: string
+	tags?: string[]
+	description?: string
 }
 
 /*
@@ -41,3 +41,9 @@ export interface ResourceInputs {
  * END FORMS
  *********************************************
  */
+
+export interface RequestData<T> {
+	data: T
+	status?: number
+	message?: string
+}
