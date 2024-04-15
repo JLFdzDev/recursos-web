@@ -36,14 +36,12 @@ export interface ResourceInputs {
 	description?: string
 }
 
+export interface TagInputs {
+	name: string
+}
+
 /*
  *********************************************
  * END FORMS
  *********************************************
  */
-
-export interface RequestData<T> {
-	data: T
-	status?: number
-	message?: string
-}
