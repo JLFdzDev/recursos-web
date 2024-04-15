@@ -1,4 +1,4 @@
-import { Actions } from '@/app/dashboard/resources/components/actions'
+import { Actions } from '@/app/dashboard/components/actions'
 import { Table } from '@/components/table'
 import { Tbody } from '@/components/table-body'
 import { Td } from '@/components/table-body-col'
@@ -7,8 +7,10 @@ import { Th } from '@/components/table-head-col'
 import { Tr } from '@/components/table-row'
 import { Tag } from '@/components/tag'
 
-import noImage from '@/app/images/no-image.webp'
 import { findAll } from '@/db/repository/resources'
+import { removeResource } from '@/lib/actions/resources'
+
+import noImage from '@/app/images/no-image.webp'
 
 export const List = async () => {
 	const resources = await findAll()
@@ -48,7 +50,7 @@ export const List = async () => {
 							</div>
 						</Td>
 						<Td>
-							<Actions url={`/dashboard/resources`} id={resource.id} />
+							<Actions url={`/dashboard/resources`} id={resource.id} remove={removeResource} />
 						</Td>
 					</Tr>
 				))}
