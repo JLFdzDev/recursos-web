@@ -1,24 +1,38 @@
+import { Github } from '@/components/icons'
 import { NavbarLink } from './navbar-link'
 
 const DASHBOARD_LINKS = [
 	{
-		label: 'Home',
-		href: '/dashboard'
-	},
-	{
 		label: 'Resources',
-		href: '/dashboard/resources'
+		href: '/dashboard/resources',
 	},
 	{
 		label: 'Tags',
-		href: '/dashboard/tags'
-	}
+		href: '/dashboard/tags',
+	},
 ]
 
 export const Navbar = () => {
 	return (
 		<nav className="flex justify-between items-center py-4 px-6 text-light border-b border-secondary">
-			<a href="https://github.com/JLFdzDev" target="_blank" rel="noreferrer noopener" className="text-xl font-bold">JLFdezDev</a>
+			<div className="flex gap-4 items-center">
+				<a
+					href="https://github.com/JLFdzDev/recursos-web"
+					target="_blank"
+					rel="noreferrer noopener"
+					className="text-xl font-bold"
+				>
+					<Github />
+				</a>
+				<a
+					href="https://github.com/JLFdzDev"
+					target="_blank"
+					rel="noreferrer noopener"
+					className="text-xl font-bold"
+				>
+					JLFdezDev
+				</a>
+			</div>
 			<ul className="flex">
 				{DASHBOARD_LINKS.map(({ label, href }) => (
 					<li key={label}>
