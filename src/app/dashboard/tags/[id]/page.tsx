@@ -7,6 +7,5 @@ interface Props {
 }
 
 export default async function DashboardTagsEditPage({ params: { id } }: Props) {
-	console.log(id)
 	return <TagForm id={id} />
 }
