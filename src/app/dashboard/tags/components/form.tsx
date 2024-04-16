@@ -13,11 +13,17 @@ export const TagForm = async ({ id }: TagFormProps) => {
 	const tag = id ? await findById(id) : null
 
 	return (
-		<Form id={id} backRoute="/dashboard/tags" addAction={addTag} updateAction={updateTag}>
+		<Form
+			className="grid grid-cols-1 gap-2"
+			id={id}
+			backRoute="/dashboard/tags"
+			addAction={addTag}
+			updateAction={updateTag}
+		>
 			<input
 				type="text"
 				name="name"
-				className={`${INPUT_BASE_CLASSNAME} mb-2`}
+				className={INPUT_BASE_CLASSNAME}
 				placeholder="Nombre (*)"
 				required
 				defaultValue={tag?.name}
