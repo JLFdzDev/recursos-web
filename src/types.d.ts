@@ -29,6 +29,7 @@ export interface SelectOption {
 }
 
 export interface ResourceInputs {
+	id?: string
 	name: string
 	url: string
 	poster?: string
@@ -37,6 +38,7 @@ export interface ResourceInputs {
 }
 
 export interface TagInputs {
+	id?: string
 	name: string
 }
 

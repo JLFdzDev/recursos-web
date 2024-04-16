@@ -1,6 +1,6 @@
 'use server'
 
-import { create, remove } from '@/db/repository/tags'
+import { create, remove, update } from '@/db/repository/tags'
 import { TagInputs } from '@/types'
 
 import { revalidatePath } from 'next/cache'
@@ -12,6 +12,19 @@ export const addTag = async (data: FormData) => {
 	}
 
 	await create(tag)
+
+	revalidatePath('/dashboard/tags')
+
+	return redirect('/dashboard/tags')
+}
+
+export const updateTag = async (data: FormData) => {
+	const tag: TagInputs = {
+		id: data.get('id') as string,
+		name: data.get('name') as string,
+	}
+
+	await update(tag)
 
 	revalidatePath('/dashboard/tags')
 
