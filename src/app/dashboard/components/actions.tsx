@@ -1,5 +1,7 @@
 'use client'
 
+import { Edit, Remove } from '@/components/icons'
+
 interface ActionsProps {
 	id: string
 	url: string
@@ -9,11 +11,11 @@ interface ActionsProps {
 export const Actions = ({ id, url, remove }: ActionsProps) => {
 	return (
 		<div className="flex gap-2">
-			<a href={`${url}/${id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-				Editar
+			<a href={`${url}/${id}`} className="font-medium text-secondary">
+				<Edit />
 			</a>
-			<button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => remove(id)}>
-				Eliminar
+			<button className="font-medium text-secondary" onClick={() => remove(id)}>
+				<Remove />
 			</button>
 		</div>
 	)
