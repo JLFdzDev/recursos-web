@@ -32,7 +32,7 @@ export const Card = ({ resource }: CardProps) => {
 				<div className="flex flex-col flex-1 gap-4 p-6 bg-darken/50">
 					<h2 className="text-2xl font-bold">{resource.name}</h2>
 					<p className="text-sm">{resource.description}</p>
-					<ul className="flex flex-1 gap-2 flex-wrap items-end">
+					<ul className="flex flex-1 gap-2 flex-wrap content-end">
 						{resource.tags.map((tag) => (
 							<li key={tag.id}>
 								<Tag className="text-xs text-darken hover:text-darken hover:bg-primary">{tag.name}</Tag>
