@@ -14,7 +14,7 @@ export const Header = async ({ currentFilter }: HeaderProps) => {
 	return (
 		<header className="mb-10">
 			<nav>
-				<ul className="flex items-center justify-center gap-2">
+				<ul className="flex items-center justify-center gap-2 flex-wrap">
 					{tags.map((tag) => {
 						const url = new URLSearchParams()
 						url.set('tag', tag.name)
