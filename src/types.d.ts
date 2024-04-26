@@ -47,3 +47,8 @@ export interface TagInputs {
  * END FORMS
  *********************************************
  */
+
+export interface DBLimit {
+	page: number
+	take: number
+}
