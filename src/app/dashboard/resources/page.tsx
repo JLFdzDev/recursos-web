@@ -1,4 +1,4 @@
-import { PageParams } from '@/types'
+import { PageParams, SearchParams } from '@/types'
 
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
@@ -9,19 +9,20 @@ import { Suspense } from 'react'
 
 import { count } from '@/db/repository/resources'
 import { getLimitFilter, getTotalPages } from '@/utils'
+import { Search } from '../components/search'
 
-export default async function DashboardResourcesPage({ searchParams: { page = '1' } }: PageParams) {
+export default async function DashboardResourcesPage({ searchParams: { page = '1', q } }: SearchParams) {
 	const totalPages = getTotalPages(await count())
 	const limit = getLimitFilter(page)
 
 	return (
 		<>
 			<div className="flex gap-2 mb-2 items-center">
-				<input type="text" placeholder="Search..." className={`${INPUT_BASE_CLASSNAME} flex-1`} />
+				<Search />
 				<ButtonLink href="/dashboard/resources/add">Nuevo</ButtonLink>
 			</div>
 			<Suspense fallback={<h1>Cargando</h1>}>
-				<List limit={limit} />
+				<List limit={limit} q={q} />
 			</Suspense>
 			<Pagination pageCount={totalPages} />
 		</>

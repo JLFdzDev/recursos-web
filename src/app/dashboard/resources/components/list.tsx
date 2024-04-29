@@ -9,17 +9,18 @@ import { Th } from '@/components/table-head-col'
 import { Tr } from '@/components/table-row'
 import { Tag } from '@/components/tag'
 
-import { findAll } from '@/db/repository/resources'
+import { findAll, searchByNameOrUrl } from '@/db/repository/resources'
 import { removeResource } from '@/lib/actions/resources'
 
 import noImage from '@/app/images/no-image.webp'
 
 interface ListProps {
 	limit?: DBLimit
+	q?: string
 }
 
-export const List = async ({ limit }: ListProps) => {
-	const resources = await findAll(limit)
+export const List = async ({ limit, q }: ListProps) => {
+	const resources = q != null ? await searchByNameOrUrl({ limit, q }) : await findAll(limit)
 
 	return (
 		<Table>

@@ -8,15 +8,16 @@ import { Thead } from '@/components/table-head'
 import { Th } from '@/components/table-head-col'
 import { Tr } from '@/components/table-row'
 
-import { findAll } from '@/db/repository/tags'
+import { findAll, searchByName } from '@/db/repository/tags'
 import { removeTag } from '@/lib/actions/tags'
 
 interface ListProps {
 	limit?: DBLimit
+	q?: string
 }
 
-export const List = async ({ limit }: ListProps) => {
-	const tags = await findAll(limit)
+export const List = async ({ limit, q }: ListProps) => {
+	const tags = q != null ? await searchByName({ limit, q }) : await findAll(limit)
 
 	return (
 		<Table>
