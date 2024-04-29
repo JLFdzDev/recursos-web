@@ -52,3 +52,9 @@ export interface DBLimit {
 	page: number
 	take: number
 }
+
+export interface PageParams {
+	searchParams: {
+		page?: string
+	}
+}
