@@ -50,6 +50,32 @@ export async function findById(id: string) {
 	return data
 }
 
+export async function searchByNameOrUrl({ limit, q }: { limit?: DBLimit; q: string }) {
+	const data = await prisma.resource.findMany({
+		where: {
+			name: {
+				contains: q,
+			},
+			OR: [
+				{
+					url: {
+						contains: q,
+					},
+				},
+			],
+		},
+		include: {
+			tags: true,
+		},
+		orderBy: {
+			name: 'asc',
+		},
+		...getLimit(limit),
+	})
+
+	return data
+}
+
 export async function count() {
 	const data = await prisma.resource.count()
 

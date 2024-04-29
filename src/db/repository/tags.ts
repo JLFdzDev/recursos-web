@@ -26,8 +26,29 @@ export async function findById(id: string) {
 	return data
 }
 
-export async function count() {
-	const data = await prisma.tag.count()
+export async function searchByName({ q, limit }: { q: string; limit?: DBLimit }) {
+	const data = await prisma.tag.findMany({
+		where: {
+			name: {
+				contains: q,
+			},
+		},
+		...getLimit(limit),
+	})
+
+	return data
+}
+
+export async function count(q?: string) {
+	const data = await prisma.tag.count({
+		...(q != null && {
+			where: {
+				name: {
+					contains: q,
+				},
+			},
+		}),
+	})
 
 	return data
 }
