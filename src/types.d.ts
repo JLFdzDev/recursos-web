@@ -58,3 +58,10 @@ export interface PageParams {
 		page?: string
 	}
 }
+
+export interface SearchParams {
+	searchParams: {
+		q?: string
+		page?: string
+	}
+}
