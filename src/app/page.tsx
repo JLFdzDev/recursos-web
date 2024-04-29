@@ -5,6 +5,7 @@ import { count } from '@/db/repository/resources'
 
 import { Pagination } from '@/components/pagination'
 import { getLimitFilter, getTotalPages } from '@/utils'
+import { Suspense } from 'react'
 
 interface HomeProps {
 	searchParams: {
@@ -20,7 +21,9 @@ export default async function Home({ searchParams: { tag, page = '1' } }: HomePr
 	return (
 		<main className="w-full max-w-screen-xl mx-auto py-10">
 			<Header currentFilter={tag} />
-			<ResourcesList tagFilter={tag} limit={limit} />
+			<Suspense fallback={<h1>Cargando</h1>}>
+				<ResourcesList tagFilter={tag} limit={limit} />
+			</Suspense>
 			<Pagination pageCount={totalPages} />
 		</main>
 	)
