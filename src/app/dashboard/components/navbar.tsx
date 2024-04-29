@@ -34,6 +34,9 @@ export const Navbar = () => {
 				</a>
 			</div>
 			<ul className="flex">
+				<li>
+					<NavbarLink label="Home" href="/" target="_blank" />
+				</li>
 				{DASHBOARD_LINKS.map(({ label, href }) => (
 					<li key={label}>
 						<NavbarLink label={label} href={href} />
