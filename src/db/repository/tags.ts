@@ -1,13 +1,16 @@
 'use server'
 
-import { prisma } from '@/db/connection'
-import { TagInputs } from '@/types'
+import { DBLimit, TagInputs } from '@/types'
 
-export async function findAll() {
+import { prisma } from '@/db/connection'
+import { getLimit } from '@/db/repository/utils'
+
+export async function findAll(limit?: DBLimit) {
 	const data = await prisma.tag.findMany({
 		orderBy: {
 			name: 'asc',
 		},
+		...getLimit(limit),
 	})
 
 	return data
@@ -19,6 +22,12 @@ export async function findById(id: string) {
 			id,
 		},
 	})
+
+	return data
+}
+
+export async function count() {
+	const data = await prisma.tag.count()
 
 	return data
 }

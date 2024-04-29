@@ -1,3 +1,5 @@
+import { DBLimit } from '@/types'
+
 import { Actions } from '@/app/dashboard/components/actions'
 import { Table } from '@/components/table'
 import { Tbody } from '@/components/table-body'
@@ -12,8 +14,12 @@ import { removeResource } from '@/lib/actions/resources'
 
 import noImage from '@/app/images/no-image.webp'
 
-export const List = async () => {
-	const resources = await findAll()
+interface ListProps {
+	limit?: DBLimit
+}
+
+export const List = async ({ limit }: ListProps) => {
+	const resources = await findAll(limit)
 
 	return (
 		<Table>

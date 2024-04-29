@@ -1,3 +1,5 @@
+import { DBLimit } from '@/types'
+
 import { Actions } from '@/app/dashboard/components/actions'
 import { Table } from '@/components/table'
 import { Tbody } from '@/components/table-body'
@@ -9,8 +11,12 @@ import { Tr } from '@/components/table-row'
 import { findAll } from '@/db/repository/tags'
 import { removeTag } from '@/lib/actions/tags'
 
-export const List = async () => {
-	const tags = await findAll()
+interface ListProps {
+	limit?: DBLimit
+}
+
+export const List = async ({ limit }: ListProps) => {
+	const tags = await findAll(limit)
 
 	return (
 		<Table>
