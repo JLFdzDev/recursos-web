@@ -5,25 +5,35 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model Resource {
-	id 			String @id @default(uuid())
-	name 		String @unique
-	url 		String @unique
-	poster 		String?
-	description String? @db.Text
-	tags		Tag[]
+    id          String  @id @default(uuid())
+    name        String  @unique
+    url         String  @unique
+    poster      String?
+    description String? @db.Text
+    tags        Tag[]
 }
 
 model Tag {
-	id 			String @id @default(uuid())
-	name 		String @unique
-	resources 	Resource[]
+    id        String     @id @default(uuid())
+    name      String     @unique
+    resources Resource[]
+}
+
+model User {
+    id       String  @id @default(cuid())
+    username String? @unique
+    email    String  @unique
+    password String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
