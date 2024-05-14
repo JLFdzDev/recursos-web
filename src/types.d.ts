@@ -42,6 +42,14 @@ export interface TagInputs {
 	name: string
 }
 
+export interface UserInputs {
+	id?: string
+	username: string
+	email: string
+	password?: string
+	confirmPassword?: string
+}
+
 /*
  *********************************************
  * END FORMS
