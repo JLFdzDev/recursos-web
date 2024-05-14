@@ -1,5 +1,8 @@
-import { ITEMS_PER_PAGE } from '@/const'
 import { DBLimit } from '@/types'
+
+import { ITEMS_PER_PAGE } from '@/const'
+
+import bcrypt from 'bcrypt'
 
 export function isGetAllFormDataNull(data: unknown[] | null | undefined) {
 	if (data == null) return true
@@ -19,4 +22,12 @@ export function getLimitFilter(page?: string): DBLimit | undefined {
 		page: parseInt(page),
 		take: ITEMS_PER_PAGE,
 	}
+}
+
+export function hashPassword(password: string) {
+	return bcrypt.hash(password, 10)
+}
+
+export async function validatePassword(userPassword: string, enteredPassword: string) {
+	return bcrypt.compare(enteredPassword, userPassword)
 }
