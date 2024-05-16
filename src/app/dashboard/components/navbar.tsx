@@ -1,5 +1,6 @@
+import { LogOutButton } from '@/app/dashboard/components//logout-button'
+import { NavbarLink } from '@/app/dashboard/components/navbar-link'
 import { Github } from '@/components/icons'
-import { NavbarLink } from './navbar-link'
 
 const DASHBOARD_LINKS = [
 	{
@@ -33,7 +34,7 @@ export const Navbar = () => {
 					JLFdezDev
 				</a>
 			</div>
-			<ul className="flex">
+			<ul className="flex items-center">
 				<li>
 					<NavbarLink label="Home" href="/" target="_blank" />
 				</li>
@@ -42,6 +43,9 @@ export const Navbar = () => {
 						<NavbarLink label={label} href={href} />
 					</li>
 				))}
+				<li>
+					<LogOutButton />
+				</li>
 			</ul>
 		</nav>
 	)
