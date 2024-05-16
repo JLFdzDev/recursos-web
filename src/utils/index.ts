@@ -2,7 +2,7 @@ import { DBLimit } from '@/types'
 
 import { ITEMS_PER_PAGE } from '@/const'
 
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 export function isGetAllFormDataNull(data: unknown[] | null | undefined) {
 	if (data == null) return true
