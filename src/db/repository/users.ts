@@ -2,12 +2,19 @@ import { UserInputs } from '@/types'
 
 import { prisma } from '@/db/connection'
 import { hashPassword } from '@/utils'
-import { Prisma } from '@prisma/client'
 
 export function findByEmail(email: string) {
 	return prisma.user.findUnique({
 		where: {
 			email,
+		},
+	})
+}
+
+export function findByUsernameOrEmail(value: string) {
+	return prisma.user.findFirst({
+		where: {
+			OR: [{ username: value }, { email: value }],
 		},
 	})
 }

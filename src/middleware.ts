@@ -1,6 +1,6 @@
 import { auth } from '@/auth'
 
-const PROTECTED_PATHS = ['/dashboard', '/auth/register']
+const PROTECTED_PATHS = ['/dashboard']
 
 export default auth((req) => {
 	if (

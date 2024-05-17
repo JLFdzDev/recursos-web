@@ -13,7 +13,7 @@ export const LoginForm = () => {
 
 	const handleSignIn = async (formData: FormData) => {
 		const res = await signIn('credentials', {
-			email: formData.get('email'),
+			username: formData.get('username'),
 			password: formData.get('password'),
 			redirect: false,
 			callbackUrl: '/dashboard/resources',
@@ -31,10 +31,10 @@ export const LoginForm = () => {
 			<div></div>
 			<form action={handleSignIn} className="grid grid-cols-4 gap-2">
 				<input
-					name="email"
-					type="email"
+					name="username"
+					type="text"
 					className={`${INPUT_BASE_CLASSNAME} text-light col-span-full`}
-					placeholder="Email"
+					placeholder="Username or Email"
 					required
 				/>
 				<input
