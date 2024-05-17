@@ -1,19 +1,20 @@
 'use client'
 
-import { HTMLAttributeAnchorTarget } from 'react'
+import { type HTMLAttributeAnchorTarget } from 'react'
 
-import clsx from 'clsx'
 import Link from 'next/link'
 
 import { usePathname } from 'next/navigation'
 
-interface NavbarLinkProps {
+import clsx from 'clsx'
+
+interface Props {
 	label: string
 	href: string
 	target?: HTMLAttributeAnchorTarget
 }
 
-export const NavbarLink = ({ label, href, target }: NavbarLinkProps) => {
+export const NavbarLink = ({ label, href, target }: Props) => {
 	const pathname = usePathname()
 
 	return (

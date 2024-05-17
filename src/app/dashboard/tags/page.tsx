@@ -7,7 +7,7 @@ import { Pagination } from '@/components/ui/pagination'
 import { Suspense } from 'react'
 
 import { count } from '@/db/repository/tags'
-import { getLimitFilter, getTotalPages } from '@/utils'
+import { getLimitFilter, getTotalPages } from '@/utils/pagination'
 
 export default async function DashboardTagsPage({ searchParams: { page = '1', q } }: SearchParams) {
 	const totalPages = getTotalPages(await count(q))

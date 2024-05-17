@@ -8,7 +8,7 @@ import { Pagination } from '@/components/ui/pagination'
 import { Suspense } from 'react'
 
 import { count } from '@/db/repository/resources'
-import { getLimitFilter, getTotalPages } from '@/utils'
+import { getLimitFilter, getTotalPages } from '@/utils/pagination'
 import { Search } from '../../../components/dashboard/search'
 
 export default async function DashboardResourcesPage({ searchParams: { page = '1', q } }: SearchParams) {

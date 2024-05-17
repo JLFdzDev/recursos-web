@@ -7,7 +7,7 @@ import { Suspense } from 'react'
 import { count } from '@/db/repository/resources'
 
 import { auth } from '@/auth'
-import { getLimitFilter, getTotalPages } from '@/utils'
+import { getLimitFilter, getTotalPages } from '@/utils/pagination'
 
 interface HomeProps {
 	searchParams: {

@@ -1,6 +1,6 @@
 import NextAuth, { CredentialsSignin } from 'next-auth'
 
-import { validatePassword } from '@/utils'
+import { validatePassword } from '@/utils/auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { findByUsernameOrEmail } from './db/repository/users'
 

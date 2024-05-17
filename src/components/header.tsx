@@ -1,14 +1,15 @@
 import { Tag } from '@/components/ui/tag'
 import Link from 'next/link'
 
-import { findAll } from '@/db/repository/tags'
 import clsx from 'clsx'
 
-interface HeaderProps {
+import { findAll } from '@/db/repository/tags'
+
+interface Props {
 	currentFilter?: string | null
 }
 
-export const Header = async ({ currentFilter }: HeaderProps) => {
+export const Header = async ({ currentFilter }: Props) => {
 	const tags = await findAll()
 
 	return (

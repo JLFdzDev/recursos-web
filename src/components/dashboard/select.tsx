@@ -6,7 +6,7 @@ import ReactSelect from 'react-select'
 
 import { REACT_SELECT_BASE_CLASSNAME } from '@/const/theme'
 
-interface SelectProps {
+interface Props {
 	defaultValue?: SelectOption[]
 	isMulti?: boolean
 	name: string
@@ -14,13 +14,7 @@ interface SelectProps {
 	placeholder?: string
 }
 
-export const Select = ({
-	defaultValue,
-	isMulti = false,
-	name,
-	options,
-	placeholder = 'Selecciona uno...',
-}: SelectProps) => {
+export const Select = ({ defaultValue, isMulti = false, name, options, placeholder = 'Selecciona uno...' }: Props) => {
 	return (
 		<ReactSelect
 			name={name}

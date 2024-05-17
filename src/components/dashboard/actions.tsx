@@ -2,13 +2,13 @@
 
 import { Edit, Remove } from '@/components/ui/icons'
 
-interface ActionsProps {
+interface Props {
 	id: string
 	url: string
 	remove: (id: string) => void
 }
 
-export const Actions = ({ id, url, remove }: ActionsProps) => {
+export const Actions = ({ id, url, remove }: Props) => {
 	return (
 		<div className="flex gap-2">
 			<a href={`${url}/${id}`} className="font-medium text-secondary">

@@ -25,6 +25,7 @@ export const Edit = (props: SVGProps<SVGSVGElement>) => (
 		strokeWidth="2"
 		strokeLinecap="round"
 		strokeLinejoin="round"
+		{...props}
 	>
 		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 		<path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
@@ -44,6 +45,7 @@ export const Remove = (props: SVGProps<SVGSVGElement>) => (
 		strokeWidth="2"
 		strokeLinecap="round"
 		strokeLinejoin="round"
+		{...props}
 	>
 		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 		<path d="M4 7l16 0" />

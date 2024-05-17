@@ -1,10 +1,9 @@
 'use client'
 
-import React from 'react'
-
-import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
+
+import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
 export const Search = () => {
 	const router = useRouter()

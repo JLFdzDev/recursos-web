@@ -1,18 +1,18 @@
 import { type Resource, type Tag as ITag } from '@prisma/client'
 
-import { Tag } from './tag'
+import { Tag } from '@/components/ui/tag'
 
 import clsx from 'clsx'
 
 import noImage from '@/app/assets/images/no-image.webp'
 
-interface CardProps {
+interface Props {
 	resource: Resource & {
 		tags: ITag[]
 	}
 }
 
-export const Card = ({ resource }: CardProps) => {
+export const Card = ({ resource }: Props) => {
 	return (
 		<article
 			className={clsx(

@@ -1,15 +1,7 @@
-import { UserInputs } from '@/types'
+import { type UserInputs } from '@/types'
 
-import { prisma } from '@/db/connection'
-import { hashPassword } from '@/utils'
-
-export function findByEmail(email: string) {
-	return prisma.user.findUnique({
-		where: {
-			email,
-		},
-	})
-}
+import { prisma } from '@/db'
+import { hashPassword } from '@/utils/auth'
 
 export function findByUsernameOrEmail(value: string) {
 	return prisma.user.findFirst({

@@ -13,3 +13,14 @@ export const REACT_SELECT_BASE_CLASSNAME = {
 	indicatorSeparator: () => 'bg-darken',
 	clearIndicator: () => 'text-secondary',
 }
+
+export const BUTTON_BASE = 'rounded-lg transition-colors duration-300'
+export const BUTTON_VARIANT = {
+	primary: 'bg-primary text-light hover:bg-secondary hover:text-dark',
+	secondary: 'bg-secondary text-dark hover:bg-primary hover:text-light',
+}
+export const BUTTON_SIZE = {
+	sm: 'text-sm py-1.5 px-2.5',
+	md: 'text-base py-2.5 px-4',
+	lg: 'text-lg py-3 px-6',
+}

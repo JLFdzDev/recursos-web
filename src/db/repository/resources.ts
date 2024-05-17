@@ -1,9 +1,9 @@
 'use server'
 
-import { DBLimit, ResourceInputs } from '@/types'
+import type { DBLimit, ResourceInputs } from '@/types'
 
-import { prisma } from '@/db/connection'
-import { getLimit } from '@/db/repository/utils'
+import { prisma } from '@/db'
+import { getLimit } from '@/utils/db'
 
 export async function findAll(limit?: DBLimit) {
 	const data = await prisma.resource.findMany({

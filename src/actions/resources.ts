@@ -2,7 +2,7 @@
 
 import { create, remove, update } from '@/db/repository/resources'
 import { ResourceInputs } from '@/types'
-import { isGetAllFormDataNull } from '@/utils'
+import { isGetAllFormDataNull } from '@/utils/form'
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'

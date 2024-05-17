@@ -1,36 +1,21 @@
-import clsx from 'clsx'
 import Link from 'next/link'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+import clsx from 'clsx'
 
-const baseClassName = 'rounded-lg transition-colors duration-300'
-const variantClassName = {
-	primary: 'bg-primary text-light hover:bg-secondary hover:text-dark',
-	secondary: 'bg-secondary text-dark hover:bg-primary hover:text-light',
-}
-
-const sizeClassName = {
-	sm: 'text-sm py-1.5 px-2.5',
-	md: 'text-base py-2.5 px-4',
-	lg: 'text-lg py-3 px-6',
-}
+import { BUTTON_BASE, BUTTON_SIZE, BUTTON_VARIANT } from '@/const/theme'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: keyof typeof variantClassName
-	size?: keyof typeof sizeClassName
+	variant?: keyof typeof BUTTON_VARIANT
+	size?: keyof typeof BUTTON_SIZE
+}
+
+function getClassNames({ className, variant, size }: ButtonProps) {
+	return clsx(BUTTON_BASE, BUTTON_VARIANT[variant ?? 'primary'], BUTTON_SIZE[size ?? 'md'], className)
 }
 
 export const Button = (props: ButtonProps) => {
 	return (
-		<button
-			{...props}
-			className={clsx(
-				baseClassName,
-				variantClassName[props.variant ?? 'primary'],
-				sizeClassName[props.size ?? 'md'],
-				props.className,
-			)}
-		>
+		<button {...props} className={getClassNames(props)}>
 			{props.children}
 		</button>
 	)
@@ -42,15 +27,7 @@ interface ButtonLinkProps extends ButtonProps {
 
 export const ButtonLink = (props: ButtonLinkProps) => {
 	return (
-		<Link
-			href={props.href}
-			className={clsx(
-				baseClassName,
-				variantClassName[props.variant ?? 'primary'],
-				sizeClassName[props.size ?? 'md'],
-				props.className,
-			)}
-		>
+		<Link href={props.href} className={getClassNames(props)}>
 			{props.children}
 		</Link>
 	)

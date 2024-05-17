@@ -1,14 +1,15 @@
+import { type DBLimit } from '@/types'
+
 import { Card } from '@/components/ui/card'
 
 import { findAll, findByTag } from '@/db/repository/resources'
-import { DBLimit } from '@/types'
 
-interface ResourcesListProps {
+interface Props {
 	tagFilter?: string
 	limit?: DBLimit
 }
 
-export const ResourcesList = async ({ tagFilter, limit }: ResourcesListProps) => {
+export const ResourcesList = async ({ tagFilter, limit }: Props) => {
 	const resources = tagFilter != null ? await findByTag(tagFilter) : await findAll(limit)
 
 	return (

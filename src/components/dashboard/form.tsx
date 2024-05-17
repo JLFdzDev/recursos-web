@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 
 import { Button, ButtonLink } from '@/components/ui/button'
 
-interface FormProps extends PropsWithChildren {
+interface Props extends PropsWithChildren {
 	className?: string
 	id?: string
 	backRoute: string
@@ -17,7 +17,7 @@ export const Form = async ({
 	id,
 	addAction,
 	updateAction,
-}: FormProps) => {
+}: Props) => {
 	return (
 		<form action={id != null ? await updateAction : await addAction} className={className}>
 			{id != null && <input type="hidden" name="id" value={id} />}

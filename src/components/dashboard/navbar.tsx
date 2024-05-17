@@ -2,16 +2,7 @@ import { LogOutButton } from '@/components/dashboard/logout-button'
 import { NavbarLink } from '@/components/dashboard/navbar-link'
 import { Github } from '@/components/ui/icons'
 
-const DASHBOARD_LINKS = [
-	{
-		label: 'Resources',
-		href: '/dashboard/resources',
-	},
-	{
-		label: 'Tags',
-		href: '/dashboard/tags',
-	},
-]
+import { DASHBOARD_LINKS } from '@/const/config'
 
 export const Navbar = () => {
 	return (
