@@ -1,16 +1,11 @@
 import { DBLimit } from '@/types'
 
 import { Actions } from '@/components/dashboard/actions'
-import { Table } from '@/components/ui/table'
-import { Tbody } from '@/components/ui/table-body'
-import { Td } from '@/components/ui/table-body-col'
-import { Thead } from '@/components/ui/table-head'
-import { Th } from '@/components/ui/table-head-col'
-import { Tr } from '@/components/ui/table-row'
+import { Table, Tbody, Td, Th, Thead, Tr } from '@/components/ui/table'
 import { Tag } from '@/components/ui/tag'
 
-import { findAll, searchByNameOrUrl } from '@/db/repository/resources'
 import { removeResource } from '@/actions/resources'
+import { findAll, searchByNameOrUrl } from '@/db/repository/resources'
 
 import noImage from '@/app/assets/images/no-image.webp'
 
