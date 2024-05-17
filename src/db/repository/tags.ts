@@ -16,6 +16,22 @@ export async function findAll(limit?: DBLimit) {
 	return data
 }
 
+export async function findAllHasResources(limit?: DBLimit) {
+	const data = await prisma.tag.findMany({
+		where: {
+			resources: {
+				some: {},
+			},
+		},
+		orderBy: {
+			name: 'asc',
+		},
+		...getLimit(limit),
+	})
+
+	return data
+}
+
 export async function findById(id: string) {
 	const data = await prisma.tag.findUnique({
 		where: {

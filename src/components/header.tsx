@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 import clsx from 'clsx'
 
-import { findAll } from '@/db/repository/tags'
+import { findAll, findAllHasResources } from '@/db/repository/tags'
 
 interface Props {
 	currentFilter?: string | null
 }
 
 export const Header = async ({ currentFilter }: Props) => {
-	const tags = await findAll()
+	const tags = await findAllHasResources()
 
 	return (
 		<header className="mb-10">
