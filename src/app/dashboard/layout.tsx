@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { Navbar } from '@/app/dashboard/components/navbar'
+import { Navbar } from '@/components/dashboard/navbar'
 
 export const metadata: Metadata = {
 	title: 'Dashboard | JLFdezDev',

@@ -1,7 +1,7 @@
-import { Header } from '@/app/components/header'
-import { ResourcesList } from '@/app/components/resources-list'
-import { Navbar } from '@/app/dashboard/components/navbar'
-import { Pagination } from '@/components/pagination'
+import { Header } from '@/components/header'
+import { ResourcesList } from '@/components/resources-list'
+import { Navbar } from '@/components/dashboard/navbar'
+import { Pagination } from '@/components/ui/pagination'
 import { Suspense } from 'react'
 
 import { count } from '@/db/repository/resources'

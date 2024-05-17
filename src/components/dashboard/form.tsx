@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { Button, ButtonLink } from '@/components/button'
+import { Button, ButtonLink } from '@/components/ui/button'
 
 interface FormProps extends PropsWithChildren {
 	className?: string

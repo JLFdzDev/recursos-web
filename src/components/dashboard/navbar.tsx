@@ -1,6 +1,6 @@
-import { LogOutButton } from '@/app/dashboard/components//logout-button'
-import { NavbarLink } from '@/app/dashboard/components/navbar-link'
-import { Github } from '@/components/icons'
+import { LogOutButton } from '@/components/dashboard/logout-button'
+import { NavbarLink } from '@/components/dashboard/navbar-link'
+import { Github } from '@/components/ui/icons'
 
 const DASHBOARD_LINKS = [
 	{

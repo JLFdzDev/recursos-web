@@ -1,15 +1,15 @@
 import { DBLimit } from '@/types'
 
-import { Actions } from '@/app/dashboard/components/actions'
-import { Table } from '@/components/table'
-import { Tbody } from '@/components/table-body'
-import { Td } from '@/components/table-body-col'
-import { Thead } from '@/components/table-head'
-import { Th } from '@/components/table-head-col'
-import { Tr } from '@/components/table-row'
+import { Actions } from '@/components/dashboard/actions'
+import { Table } from '@/components/ui/table'
+import { Tbody } from '@/components/ui/table-body'
+import { Td } from '@/components/ui/table-body-col'
+import { Thead } from '@/components/ui/table-head'
+import { Th } from '@/components/ui/table-head-col'
+import { Tr } from '@/components/ui/table-row'
 
 import { findAll, searchByName } from '@/db/repository/tags'
-import { removeTag } from '@/lib/actions/tags'
+import { removeTag } from '@/actions/tags'
 
 interface ListProps {
 	limit?: DBLimit

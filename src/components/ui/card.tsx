@@ -4,7 +4,7 @@ import { Tag } from './tag'
 
 import clsx from 'clsx'
 
-import noImage from '@/app/images/no-image.webp'
+import noImage from '@/app/assets/images/no-image.webp'
 
 interface CardProps {
 	resource: Resource & {

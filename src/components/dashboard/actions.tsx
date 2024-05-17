@@ -1,6 +1,6 @@
 'use client'
 
-import { Edit, Remove } from '@/components/icons'
+import { Edit, Remove } from '@/components/ui/icons'
 
 interface ActionsProps {
 	id: string

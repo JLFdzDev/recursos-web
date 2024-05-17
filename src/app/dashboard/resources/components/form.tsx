@@ -1,11 +1,11 @@
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
-import { Form } from '@/app/dashboard/components/form'
-import { Select } from '@/app/dashboard/components/select'
+import { Form } from '@/components/dashboard/form'
+import { Select } from '@/components/dashboard/select'
 
 import { findById } from '@/db/repository/resources'
 import { findAll } from '@/db/repository/tags'
-import { addResource, updateResource } from '@/lib/actions/resources'
+import { addResource, updateResource } from '@/actions/resources'
 
 interface ResourceFormProps {
 	id?: string

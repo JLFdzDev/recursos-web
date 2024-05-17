@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
 
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 

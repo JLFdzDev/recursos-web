@@ -1,9 +1,9 @@
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
-import { Form } from '@/app/dashboard/components/form'
+import { Form } from '@/components/dashboard/form'
 
 import { findById } from '@/db/repository/tags'
-import { addTag, updateTag } from '@/lib/actions/tags'
+import { addTag, updateTag } from '@/actions/tags'
 
 interface TagFormProps {
 	id?: string

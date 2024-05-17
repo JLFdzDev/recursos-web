@@ -1,9 +1,9 @@
 import { PageParams, SearchParams } from '@/types'
 
-import { Search } from '@/app/dashboard/components/search'
+import { Search } from '@/components/dashboard/search'
 import { List } from '@/app/dashboard/tags/components/list'
-import { ButtonLink } from '@/components/button'
-import { Pagination } from '@/components/pagination'
+import { ButtonLink } from '@/components/ui/button'
+import { Pagination } from '@/components/ui/pagination'
 import { Suspense } from 'react'
 
 import { count } from '@/db/repository/tags'

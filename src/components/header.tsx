@@ -1,4 +1,4 @@
-import { Tag } from '@/components/tag'
+import { Tag } from '@/components/ui/tag'
 import Link from 'next/link'
 
 import { findAll } from '@/db/repository/tags'

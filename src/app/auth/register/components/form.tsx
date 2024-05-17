@@ -1,10 +1,10 @@
 'use client'
 
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
 
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
-import { createUser } from '@/lib/actions/users'
+import { createUser } from '@/actions/users'
 import { toast } from 'react-hot-toast'
 
 const RegisterForm = () => {

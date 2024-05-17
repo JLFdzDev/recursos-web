@@ -3,13 +3,13 @@ import { PageParams, SearchParams } from '@/types'
 import { INPUT_BASE_CLASSNAME } from '@/const/theme'
 
 import { List } from '@/app/dashboard/resources/components/list'
-import { ButtonLink } from '@/components/button'
-import { Pagination } from '@/components/pagination'
+import { ButtonLink } from '@/components/ui/button'
+import { Pagination } from '@/components/ui/pagination'
 import { Suspense } from 'react'
 
 import { count } from '@/db/repository/resources'
 import { getLimitFilter, getTotalPages } from '@/utils'
-import { Search } from '../components/search'
+import { Search } from '../../../components/dashboard/search'
 
 export default async function DashboardResourcesPage({ searchParams: { page = '1', q } }: SearchParams) {
 	const totalPages = getTotalPages(await count())

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Fira_Mono as Font } from 'next/font/google'
-import '@/app/styles/globals.css'
+import '@/app/assets/styles/globals.css'
 
 const font = Font({
 	weight: ['400', '700'],

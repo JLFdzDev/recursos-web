@@ -1,4 +1,4 @@
-import { Card } from '@/components/card'
+import { Card } from '@/components/ui/card'
 
 import { findAll, findByTag } from '@/db/repository/resources'
 import { DBLimit } from '@/types'
